@@ -49,10 +49,20 @@ body{
 .dimension-section p{
     margin-bottom: 8px;
 }
-.dimension-section input{
+.dimension-section input[type="number"] {
     width: 100%;
     box-sizing: border-box;
     height: 40px;
     border: 2px solid grey;
     border-radius: 5px;
 }
+
+
+.ratio-div, .quality-div{
+    display: flex;
+    margin: 15px 0;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
