@@ -30,7 +30,7 @@ body p{
     transition: height 0.2s ease;
 }
 .box.active{
-    height: 490px;
+    height: 100%;
 }
 
 .content{
