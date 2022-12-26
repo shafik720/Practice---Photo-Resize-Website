@@ -6,6 +6,7 @@ uploadInput = uploadSection.querySelector('input');
 let widthValue = document.querySelector('.width');
 let heightValue = document.querySelector('.height');
 let ratioCheckBox = document.getElementById('ratioCheckbox'); 
+let qualityCheckBox = document.getElementById('quality'); 
 let ratioCalculation;
 let downloadButton = document.querySelector('.download-button');
 
@@ -41,9 +42,15 @@ function downloadAndResize(){
     let canvas = document.createElement('canvas');
     let ctx = canvas.getContext('2d');
 
+    let a = document.createElement('a');
+    let imgQuality = qualityCheckBox.checked ? 0.7 : 1.0 ; 
+
     canvas.width = widthValue.value;
     canvas.height = heightValue.value;
     ctx.drawImage(uploadImg, 0, 0, canvas.width, canvas.height);
-    document.body.appendChild(canvas);
+
+    a.href = canvas.toDataURL('image/jpeg', imgQuality);
+    a.download = 'Image Resized by Russell';
+    a.click();
 }
 downloadButton.addEventListener('click', downloadAndResize);
