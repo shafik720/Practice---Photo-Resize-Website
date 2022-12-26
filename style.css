@@ -47,9 +47,12 @@ body{
     width: 100%;
 }
 .dimension-section p{
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 .dimension-section input{
     width: 100%;
     box-sizing: border-box;
+    height: 40px;
+    border: 2px solid grey;
+    border-radius: 5px;
 }
