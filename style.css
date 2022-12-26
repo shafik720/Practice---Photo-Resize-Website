@@ -33,3 +33,23 @@ body{
 .upload-section img{
     width: 80px;
 }
+.upload-section p{
+    border-bottom: 0;
+}
+
+.dimension-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin-top: 15px;
+    /* border: 1px solid; */
+    width: 100%;
+}
+.dimension-section p{
+    margin-bottom: 10px;
+}
+.dimension-section input{
+    width: 100%;
+    box-sizing: border-box;
+}
