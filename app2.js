@@ -6,6 +6,7 @@ uploadInput = uploadSection.querySelector('input');
 let widthValue = document.querySelector('.width');
 let heightValue = document.querySelector('.height');
 let ratioCheckBox = document.getElementById('ratioCheckbox'); 
+let ratioCalculation;
 
 function upload(e){
     let file = e.target.files[0];
@@ -17,13 +18,14 @@ function upload(e){
         uploadSection.classList.add('active');
         widthValue.value = uploadImg.naturalWidth;
         heightValue.value = uploadImg.naturalHeight;
+        ratioCalculation = uploadImg.naturalWidth / uploadImg.naturalHeight;
     })
     
 }
 
 widthValue.addEventListener('keyup',()=>{
-    let height = ratioCheckBox.checked ? 600 : 100 ;
-    heightValue.value = height;
+    let height = ratioCheckBox.checked ? (widthValue.value / ratioCalculation) : heightValue.value ;
+    heightValue.value = Math.floor(height);
 })
 
 uploadInput.addEventListener('change',upload);
