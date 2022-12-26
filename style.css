@@ -12,6 +12,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+body p{
+    margin-bottom: 0;
+}
 .box{
     background: white;
     width: 450px;
@@ -30,6 +33,14 @@ body{
     width: 100%;
     border-radius: 5px;
     padding: 25px 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.upload-section input{
+    display: none;
 }
 .upload-section img{
     width: 80px;
