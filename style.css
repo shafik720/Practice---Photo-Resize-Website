@@ -82,3 +82,10 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
+
+.ratio-div input , .quality-div input{
+    accent-color: #5CBC67;
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+}
