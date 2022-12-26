@@ -1,5 +1,6 @@
 
 let uploadSection = document.querySelector('.upload-section'),
+box = document.querySelector('.box'),
 uploadImg = uploadSection.querySelector('img'),
 uploadInput = uploadSection.querySelector('input');
 
@@ -18,6 +19,7 @@ function upload(e){
     uploadImg.src = URL.createObjectURL(file);
     uploadImg.addEventListener('load',()=>{
         uploadSection.classList.add('active');
+        box.classList.add('active');
         widthValue.value = uploadImg.naturalWidth;
         heightValue.value = uploadImg.naturalHeight;
         ratioCalculation = uploadImg.naturalWidth / uploadImg.naturalHeight;
