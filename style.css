@@ -3,3 +3,18 @@
 *{
     font-family: 'Poppins', sans-serif;
 }
+
+
+body{
+    background: #4282C4;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    background: white;
+    width: 450px;
+    padding: 25px;
+    border-radius: 5px;
+}
