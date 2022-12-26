@@ -17,7 +17,6 @@ function loadFile(e){
         widthValue.value = previewImg.naturalWidth;
         heightValue.value = previewImg.naturalHeight;
     })    
-    console.log(file);
 }
 
 inputFile.addEventListener('change', loadFile);
