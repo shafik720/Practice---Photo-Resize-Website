@@ -7,6 +7,7 @@ let widthValue = document.querySelector('.width');
 let heightValue = document.querySelector('.height');
 let ratioCheckBox = document.getElementById('ratioCheckbox'); 
 let ratioCalculation;
+let downloadButton = document.querySelector('.download-button');
 
 function upload(e){
     let file = e.target.files[0];
@@ -28,5 +29,21 @@ widthValue.addEventListener('keyup',()=>{
     heightValue.value = Math.floor(height);
 })
 
+heightValue.addEventListener('keyup',()=>{
+    let width = ratioCheckBox.checked ? (heightValue.value / ratioCalculation ) : widthValue.value;
+    widthValue.value = Math.floor(width);
+})
+
 uploadInput.addEventListener('change',upload);
 uploadSection.addEventListener('click',()=>uploadInput.click());
+
+function downloadAndResize(){
+    let canvas = document.createElement('canvas');
+    let ctx = canvas.getContext('2d');
+
+    canvas.width = widthValue.value;
+    canvas.height = heightValue.value;
+    ctx.drawImage(uploadImg, 0, 0, canvas.width, canvas.height);
+    document.body.appendChild(canvas);
+}
+downloadButton.addEventListener('click', downloadAndResize);
