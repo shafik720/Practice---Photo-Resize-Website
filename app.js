@@ -12,8 +12,11 @@ function loadFile(e){
         return;
     }
     previewImg.src = URL.createObjectURL(file);
-    
-    uploadBox.classList.add('active');
+    previewImg.addEventListener('load', ()=>{
+        uploadBox.classList.add('active');
+        widthValue.value = previewImg.naturalWidth;
+        heightValue.value = previewImg.naturalHeight;
+    })    
     console.log(file);
 }
 
