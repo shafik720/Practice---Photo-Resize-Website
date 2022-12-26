@@ -5,6 +5,7 @@ uploadInput = uploadSection.querySelector('input');
 
 let widthValue = document.querySelector('.width');
 let heightValue = document.querySelector('.height');
+let ratioCheckBox = document.getElementById('ratioCheckbox'); 
 
 function upload(e){
     let file = e.target.files[0];
@@ -19,6 +20,11 @@ function upload(e){
     })
     
 }
+
+widthValue.addEventListener('keyup',()=>{
+    let height = ratioCheckBox.checked ? 600 : 100 ;
+    heightValue.value = height;
+})
 
 uploadInput.addEventListener('change',upload);
 uploadSection.addEventListener('click',()=>uploadInput.click());
