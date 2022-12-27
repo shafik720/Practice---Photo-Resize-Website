@@ -7,6 +7,7 @@ let widthValue = document.querySelector('.width');
 let heightValue = document.querySelector('.height');
 
 let ratioButton = document.querySelector('#ratioCheckbox');
+let ratioCalculation ;
 
 function loadFile(e){
     let file = e.target.files[0];
@@ -16,15 +17,16 @@ function loadFile(e){
     previewImg.src = URL.createObjectURL(file);
     previewImg.addEventListener('load', ()=>{
         uploadBox.classList.add('active');
-        document.querySelector('.box').classList.add('active');
+        document.querySelector('.box').classList.add('active');        
         widthValue.value = previewImg.naturalWidth;
         heightValue.value = previewImg.naturalHeight;
+        ratioCalculation = widthValue.value / heightValue.value;
     })    
 }
 function changeHeight(){
-    let height = ratioButton.checked ? 500 : 0;
+    let height = ratioButton.checked ? widthValue.value/ratioCalculation : heightValue.value;
 
-    heightValue.value = height;
+    heightValue.value = Math.floor(height);
 }
 widthValue.addEventListener('keyup',changeHeight);
 
