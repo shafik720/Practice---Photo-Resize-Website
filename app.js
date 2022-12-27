@@ -14,6 +14,7 @@ function loadFile(e){
     previewImg.src = URL.createObjectURL(file);
     previewImg.addEventListener('load', ()=>{
         uploadBox.classList.add('active');
+        document.querySelector('.box').classList.add('active');
         widthValue.value = previewImg.naturalWidth;
         heightValue.value = previewImg.naturalHeight;
     })    
