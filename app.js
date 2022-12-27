@@ -25,10 +25,14 @@ function loadFile(e){
 }
 function changeHeight(){
     let height = ratioButton.checked ? widthValue.value/ratioCalculation : heightValue.value;
-
     heightValue.value = Math.floor(height);
 }
+function changeWidth(){
+    let width = ratioButton.checked ? heightValue.value * ratioCalculation : widthValue.value;
+    widthValue.value = Math.floor(width);
+}
 widthValue.addEventListener('keyup',changeHeight);
+heightValue.addEventListener('keyup',changeWidth);
 
 inputFile.addEventListener('change', loadFile);
 uploadBox.addEventListener('click', ()=>{inputFile.click()});
