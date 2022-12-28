@@ -23,6 +23,19 @@ function loadFile(e){
         ratioCalculation = widthValue.value / heightValue.value;
     })    
 }
+function download(){
+    let canvas = document.createElement('canvas');
+    let ctx = canvas.getContext('2d');
+
+    canvas.width = widthValue.value;
+    canvas.height = heightValue.value;
+
+    ctx.drawImage(previewImg,0,0,canvas.width, canvas.height);
+    let a = document.createElement('a');
+    a.download = 'russell';
+    a.href = canvas.toDataURL('image/jpeg',0.5);
+    a.click();
+}
 function changeHeight(){
     let height = ratioButton.checked ? widthValue.value/ratioCalculation : heightValue.value;
     heightValue.value = Math.floor(height);
@@ -36,3 +49,5 @@ heightValue.addEventListener('keyup',changeWidth);
 
 inputFile.addEventListener('change', loadFile);
 uploadBox.addEventListener('click', ()=>{inputFile.click()});
+
+document.querySelector('.download-button').addEventListener('click', download)
